@@ -1,6 +1,6 @@
 context:
   name: seaweedfs
-  version: "3.97"
+  version: "3.98"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   - url: https://github.com/${{ name }}/${{ name }}/archive/refs/tags/${{ version }}.tar.gz
-    sha256: 9760263fffe2c3b25a0467cfb51ec5dbdf2b2ac015a07282e1e9e6f22c276430
+    sha256: 451eb1b382c23bb40df7afc891187a7045e9412cc2bfd527883e75c173e07fc9
     target_directory: src
   - url: https://gitlab.com/cznic/mathutil/-/raw/master/LICENSE
     sha256: bfa9bf72a72ca009fd62a8f84fca3dca67e51d93af96352723646599898b6cf5
@@ -19,11 +19,20 @@ source:
   - url: https://gitlab.com/cznic/b/-/raw/master/LICENSE
     sha256: 9d07736d504d4e0215e9e7c30a7363919a27de54bf2be330a4235769b3f4436c
     file_name: LICENSE-modernc-b
+  - url: https://raw.githubusercontent.com/kurin/blazer/refs/heads/master/LICENSE
+    sha256: e2851ee2c9388d5f19a5bed780dfdc16ec860909545b092a399d4ef73a81b7f7
+    file_name: LICENSE-kurin-blazer
+  - url: https://www.apache.org/licenses/LICENSE-2.0.txt
+    sha256: cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30
+    file_name: LICENSE-kurin-blazer-2
+  - url: https://raw.githubusercontent.com/jmespath/go-jmespath/refs/heads/master/LICENSE
+    sha256: cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30
+    file_name: LICENSE-jmespath-go-jmespath
 
 build:
   script:
     - cd src
-    - go-licenses save ./weed --ignore modernc.org/mathutil --ignore modernc.org/strutil --ignore modernc.org/b --save_path ../library_licenses
+    - go-licenses save ./weed --ignore modernc.org/mathutil --ignore modernc.org/strutil --ignore modernc.org/b --ignore github.com/jmespath/go-jmespath --ignore github.com/kurin/blazer --save_path ../library_licenses
     - if: win
       then: go build -v -o %LIBRARY_BIN%\weed.exe .\weed
       else: go build -v -o $PREFIX/bin/weed ./weed
@@ -51,6 +60,12 @@ about:
   license_file:
     - src/LICENSE
     - library_licenses/
+    - LICENSE-modernc-mathutil
+    - LICENSE-modernc-strutil
+    - LICENSE-modernc-b
+    - LICENSE-kurin-blazer
+    - LICENSE-kurin-blazer-2
+    - LICENSE-jmespath-go-jmespath
   repository: https://github.com/seaweedfs/seaweedfs
   documentation: https://seaweedfs.com
 
