@@ -1,6 +1,6 @@
 context:
   name: seaweedfs
-  version: "4.09"
+  version: "4.15"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   - url: https://github.com/${{ name }}/${{ name }}/archive/refs/tags/${{ version }}.tar.gz
-    sha256: dbc7796caf16c4bb4ce19ceb7414a1d7648925be55851a960d35d89867d2a907
+    sha256: a7ab8cbc833d0b31c6313244934ee6309a397efa4e5af46fe6c6ef55aafac47a
     target_directory: src
   - url: https://gitlab.com/cznic/mathutil/-/raw/master/LICENSE
     sha256: bfa9bf72a72ca009fd62a8f84fca3dca67e51d93af96352723646599898b6cf5
@@ -23,25 +23,26 @@ source:
     sha256: e2851ee2c9388d5f19a5bed780dfdc16ec860909545b092a399d4ef73a81b7f7
     file_name: LICENSE-kurin-blazer
   - url: https://www.apache.org/licenses/LICENSE-2.0.txt
-    sha256: cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30
+    sha256: 09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b
     file_name: LICENSE-kurin-blazer-2
   - url: https://raw.githubusercontent.com/jmespath/go-jmespath/refs/heads/master/LICENSE
-    sha256: cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30
+    sha256: 09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b
     file_name: LICENSE-jmespath-go-jmespath
   - url: https://raw.githubusercontent.com/apache/thrift/refs/heads/master/LICENSE
     sha256: d315e6cdedc07c478de6992027bfb66f220886c6216fd7e9885ced30c3703646
     file_name: LICENSE-apache-thrift
   - url: https://raw.githubusercontent.com/google/flatbuffers/refs/heads/master/LICENSE
-    sha256: cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30
+    sha256: 09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b
     file_name: LICENSE-google-flatbuffers
   - url: https://raw.githubusercontent.com/substrait-io/substrait/refs/heads/main/LICENSE
-    sha256: cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30
+    sha256: 09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b
     file_name: LICENSE-substrait
 
 build:
   script:
     - cd src
-    - go-licenses save ./weed --ignore modernc.org/mathutil --ignore modernc.org/strutil --ignore modernc.org/b --ignore github.com/jmespath/go-jmespath --ignore github.com/kurin/blazer --ignore github.com/apache/thrift --ignore github.com/google/flatbuffers --ignore github.com/substrait-io/substrait-protobuf --save_path ../library_licenses
+    - go-licenses save ./weed --ignore modernc.org/mathutil --ignore modernc.org/strutil --ignore modernc.org/b --ignore github.com/jmespath/go-jmespath --ignore github.com/kurin/blazer --ignore github.com/apache/thrift --ignore github.com/google/flatbuffers --ignore github.com/substrait-io/substrait-protobuf 
+      --save_path ../library_licenses
     - if: win
       then: go build -v -o %LIBRARY_BIN%\weed.exe .\weed
       else: go build -v -o $PREFIX/bin/weed ./weed
