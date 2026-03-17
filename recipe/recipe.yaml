@@ -23,16 +23,16 @@ source:
     sha256: e2851ee2c9388d5f19a5bed780dfdc16ec860909545b092a399d4ef73a81b7f7
     file_name: LICENSE-kurin-blazer
   - url: https://www.apache.org/licenses/LICENSE-2.0.txt
-    sha256: 09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b
+    sha256: cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30
     file_name: LICENSE-kurin-blazer-2
   - url: https://raw.githubusercontent.com/jmespath/go-jmespath/refs/heads/master/LICENSE
-    sha256: 09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b
+    sha256: cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30
     file_name: LICENSE-jmespath-go-jmespath
   - url: https://raw.githubusercontent.com/apache/thrift/refs/heads/master/LICENSE
     sha256: d315e6cdedc07c478de6992027bfb66f220886c6216fd7e9885ced30c3703646
     file_name: LICENSE-apache-thrift
   - url: https://raw.githubusercontent.com/google/flatbuffers/refs/heads/master/LICENSE
-    sha256: 09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b
+    sha256: cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30
     file_name: LICENSE-google-flatbuffers
   - url: https://raw.githubusercontent.com/substrait-io/substrait/refs/heads/main/LICENSE
     sha256: 09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b
