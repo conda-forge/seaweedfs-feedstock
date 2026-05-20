@@ -1,6 +1,6 @@
 context:
   name: seaweedfs
-  version: "4.26"
+  version: "4.27"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   - url: https://github.com/${{ name }}/${{ name }}/archive/refs/tags/${{ version }}.tar.gz
-    sha256: 9edee992266d4160074026e2640a0f1e1fabc683ce36173e74132e1a17044f69
+    sha256: 7615b9962ed8e49d7a11cfc790914e877c704710286f3d246274c5b4fab6b84f
     target_directory: src
   - url: https://gitlab.com/cznic/mathutil/-/raw/master/LICENSE
     sha256: bfa9bf72a72ca009fd62a8f84fca3dca67e51d93af96352723646599898b6cf5
