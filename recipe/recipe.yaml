@@ -1,6 +1,6 @@
 context:
   name: seaweedfs
-  version: "4.46"
+  version: "4.47"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   - url: https://github.com/${{ name }}/${{ name }}/archive/refs/tags/${{ version }}.tar.gz
-    sha256: f25baf95473c2a8b53c8111375ba5a4fc0ee5f417cbf07bbd6821e8f62de52e0
+    sha256: f2ac1ac2cbd4e72a135605b90f5369eb548303e2e60e376bf43cd49a59ddb0ec
     target_directory: src
   - url: https://gitlab.com/cznic/mathutil/-/raw/master/LICENSE
     sha256: bfa9bf72a72ca009fd62a8f84fca3dca67e51d93af96352723646599898b6cf5
@@ -29,7 +29,7 @@ source:
     sha256: cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30
     file_name: LICENSE-jmespath-go-jmespath
   - url: https://raw.githubusercontent.com/apache/thrift/refs/heads/master/LICENSE
-    sha256: 89aa7b27868669299bd8a6c53b72ec4beadce42dad6c8336797cc26e1e8df98d
+    sha256: c866aafb79e8d5885eabb9d44a0105c8fcca35d26c5088025b131a908458a8af
     file_name: LICENSE-apache-thrift
   - url: https://raw.githubusercontent.com/google/flatbuffers/refs/heads/master/LICENSE
     sha256: cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30
